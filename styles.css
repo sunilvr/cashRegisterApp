@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+:root {
+  --primary-color:#BE185D;
+}
+
+body{
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+}
+
+table{
+    text-align: center;
+    margin:auto;
+    border-radius: 0.3rem;
+    border: 0.2rem solid var(--primary-color);
+    margin-top:5rem;
+    width:40%;
+}
+
+input{
+    margin: auto;
+    display: block;
+    border-radius: 0.3rem;
+    border: 0.2rem solid var(--primary-color);
+    padding:0.75rem;
+    width:20%;
+    margin-bottom:1rem;
+
+}
+
+label{
+    margin:1rem;
+    font-size: larger;
+    font-weight: bold;
+}
+
+button{
+    padding: 0.5rem;
+    font-weight: bold;
+    background-color: var(--primary-color);
+    width: 10%;
+    border-radius: 0.5rem;
+}
+
+#message{
+    font-weight:bold;
+}
