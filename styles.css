@@ -18,6 +18,14 @@ table{
     width:40%;
 }
 
+th,
+td {
+  border: 1px solid var(--primary-color);
+  width: 0%;
+  border-collapse: collapse;
+  padding: 0.4rem;
+}
+
 input{
     margin: auto;
     display: block;

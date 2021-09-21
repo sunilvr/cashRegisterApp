@@ -17,10 +17,18 @@ function hideMessage(){
 }
 
 function calculateChange(bill, cash){
+    /*set all no_of_notes fields to blank for subsequent reruns 
+    (to handle scenarios where no change has to be returned 
+    or when the cash given is less than bill amount)*/
+    for(var i = 0; i <notesAvailable.length; i++){
+        notes[i].innerText = '';
+    }
+
     var amountToBeReturned = cash - bill;
     if(amountToBeReturned === 0){
         displayMessage("No change to be returned");
     }else if(amountToBeReturned < 0){
+        //when cash given is less than bill amount
         displayMessage("You wanna try your hands at washing plates mate?");
     }
     else{
