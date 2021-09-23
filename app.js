@@ -1,6 +1,7 @@
 var billAmountInput = document.querySelector("#bill-amount");
 var cashGivenInput = document.querySelector("#cash-given");
 var checkRegister = document.querySelector("#check-bill");
+var cashLabelId = document.querySelector("#cash-label-id");
 var message = document.querySelector("#message");
 var notes = document.querySelectorAll(".notes");
 
@@ -14,6 +15,23 @@ function displayMessage(msg){
 function hideMessage(){
     message.style.display = null;
     message.innerText="";
+}
+
+function hideCashGivenField(){
+    cashGivenInput.style.display = "none";
+    cashLabelId.style.display = "none";
+}
+
+function displayCashGivenField(){
+    // display cash input field only when valid number value is entered
+    if (!isNaN(billAmountInput.value) && billAmountInput.value > 0) {
+    cashGivenInput.style.display = "block";
+    cashLabelId.style.display = "block";
+    }
+    // re-hide the cash input field when user leaves out the bill amount field blank
+    if (!billAmountInput.value) {
+        hideCashGivenField();
+    }
 }
 
 function calculateChange(bill, cash){
@@ -59,5 +77,10 @@ function validateBillAmount(){
     } 
 }
 
+//cash given input field will be displayed when the user enters a valid bill amount 
+billAmountInput.addEventListener("change", displayCashGivenField);
 checkRegister.addEventListener("click", validateBillAmount);
+
+//cash given input field will be hidden until the user enters a valid bill amount
+hideCashGivenField();
 
